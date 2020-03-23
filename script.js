@@ -6,7 +6,33 @@ array = new Uint8Array(512);
 body = document.querySelector('body');
 audio = document.getElementById("audio");
 
-window.onclick = function() {
+
+document.onclick = function() {
+    if(!context) {
+        body.querySelector('h1').remove();
+        myElements = document.getElementsByClassName('logo');
+        context = new AudioContext();
+        analyser = context.createAnalyser();
+        src = context.createMediaElementSource(audio);
+        src.connect(analyser);
+        analyser.connect(context.destination);
+
+        for(var i = 0 ; i < num ; i++){
+            logo = document.createElement('div');
+            logo.className = 'logo';
+            logo.style.background = 'purple';
+            logo.style.minWidth = width+'px';
+            body.appendChild(logo);
+        }
+    }
+
+    if(audio.paused) audio.play();
+    else audio.pause();
+
+    loop();
+}
+
+document.ontouchstart = function() {
     if(!context) {
         body.querySelector('h1').remove();
         myElements = document.getElementsByClassName('logo');
