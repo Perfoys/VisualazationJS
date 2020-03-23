@@ -6,10 +6,7 @@ array = new Uint8Array(512);
 body = document.querySelector('body');
 audio = document.getElementById("audio");
 
-window.onclick(func);
-window.ontouchstart(func);
-
-var func = function() {
+window.onclick = function() {
     if(!context) {
         body.querySelector('h1').remove();
         myElements = document.getElementsByClassName('logo');
