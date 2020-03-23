@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #1e1e1e;
+    color: white;
+    font-size: 72px;
+    background: url('back.jpg');
+}
+.logo {
+    margin: 2px;
+    border-radius: 5px;
+}
+#audio {
+    align-self: flex-start; 
+}
