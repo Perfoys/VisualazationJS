@@ -74,3 +74,35 @@ function loop() {
         myElements[i].style.opacity = 0.005*height;
     }
 }
+
+/** window.onclick = function() {
+    if(context) return;
+
+    body.querySelector('h1').remove();
+
+    for(var i = 0; i < num; i++) {
+        logo = document.createElement('div');
+        logo.className = 'logo';
+        logo.style.background = 'red';
+        logo.style.minWidth = width + 'px';
+        body.appenChild(logo);
+    }
+
+    myElements = document.getElementsByClassName('logo');
+    context = new AudioContext();
+    analyser = context.createAnalyser();
+ 
+    analyser.connect(context.destination);
+    
+    navigator.mediaDevices.getUserMedia({
+        audio: true
+    }).then(stream => {
+        src = context.createMediaStreamSource(stream);
+        src.connect(analyser);
+        loop();
+    }).catch(error => {
+        alert(error + '\r\n\ Отклонено. Страница будет обновлена!');
+        location.reload();
+    });
+}
+*/
